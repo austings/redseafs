@@ -23,6 +23,12 @@ If the ISO.C file does not exist, a blank filesystem will be created (and writte
 
 `fusermount -u <mount_point>` to unmount
 
+## Caveat
+
+In order to access the mount point, you may need to use `su root`. If you try to `cd` into it with normal permissions, all kinds of strange behavior can occur. Perhaps FUSE can only mount a non-identified filetype as `su`.
+
+[See this ticket for more details.](https://github.com/obecebo/redseafs/issues/1)
+
 # Installation
 
 Clone the repo, move `isoc-mount` and `isoc.py` to `/usr/bin`, `chmod +x`.
